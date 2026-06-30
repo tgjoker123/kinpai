@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinpai Sushi | Experiência de Luxo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="loader-content">
+            <h1 class="loader-logo">金牌</h1>
+            <p class="loader-sub">KINPAI SUSHI</p>
+            <div class="loader-bar"><div class="bar-progress"></div></div>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">KINPAI</div>
+        <nav class="nav-links">
+            <a href="javascript:void(0)" onclick="scrollToSection('#sobre')">SOBRE</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('#galeria')">GALERIA</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('#cardapio')">CARDÁPIO</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('#delivery')">DELIVERY</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('#reservas')">RESERVAS</a>
+        </nav>
+    </header>
+
+    <section id="sobre" class="hero">
+        <div class="hero-overlay"></div>
+        <img src="topo-sushi.jpg" alt="Kinpai 20 Anos" class="parallax-bg">
+        <div class="hero-content">
+            <span class="tag-gold">UMA HISTÓRIA DE EXCELÊNCIA</span>
+            <h1 class="animate-title">Kinpai 20 Anos</h1>
+            <p class="animate-text">Uma paraibana, bem petropolitana e quase japonesa! Morando em Petrópolis há 30 anos e com mais de 25 anos de experiência em restaurante japonês, Nea traz ao Kinpai sua paixão pela culinária com muita criatividade, alegria e a administração de uma equipe premium com atendimento personalizado!</p>
+            <div class="scroll-indicator" onclick="scrollToSection('#galeria')">
+                <span>EXPLORE A EXPERIÊNCIA</span>
+                <div class="indicator-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <span class="tag-gold center">VISUAL PREMIUM</span>
+            <h2 class="section-title">Nossa Arte</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="galeria1.jpg" alt="Sushi Maçaricado"></div>
+                <div class="gallery-item"><img src="galeria2.jpg" alt="Sushi Prato Azul"></div>
+                <div class="gallery-item"><img src="galeria3.jpg" alt="Ingredientes Desconstruídos"></div>
+                <div class="gallery-item"><img src="galeria4.jpg" alt="Joe de Couve"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cardapio" class="menu-section">
+        <div class="container">
+            <span class="tag-gold center">SABORES EXCLUSIVOS</span>
+            <h2 class="section-title">Nossas Seleções</h2>
+            <p class="section-subtitle">Clique em uma das opções abaixo para revelar o menu exclusivo preparado para hoje.</p>
+            
+            <div class="menu-grid">
+                <div class="menu-card" onclick="openMenu('rodizio')">
+                    <div class="card-border"></div>
+                    <h3>RODÍZIO</h3>
+                    <span class="explore-btn">VER ITENS</span>
+                </div>
+                <div class="menu-card" onclick="openMenu('dose-dupla')">
+                    <div class="card-border"></div>
+                    <h3>DOSE DUPLA</h3>
+                    <span class="explore-btn">VER ITENS</span>
+                </div>
+                <div class="menu-card" onclick="openMenu('a-la-carte')">
+                    <div class="card-border"></div>
+                    <h3>A LA CARTE</h3>
+                    <span class="explore-btn">VER ITENS</span>
+                </div>
+                <div class="menu-card" onclick="openMenu('executivo')">
+                    <div class="card-border"></div>
+                    <h3>EXECUTIVO</h3>
+                    <span class="explore-btn">VER ITENS</span>
+                </div>
+                <div class="menu-card" onclick="openMenu('bebidas')">
+                    <div class="card-border"></div>
+                    <h3>BEBIDAS</h3>
+                    <span class="explore-btn">VER ITENS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="menu-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeMenu()">&times;</span>
+            <h2 id="modal-title" class="modal-title">Título do Cardápio</h2>
+            <div class="modal-divider"></div>
+            <div id="modal-body" class="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <section id="delivery" class="delivery-section">
+        <div class="delivery-container">
+            <div class="delivery-image-wrap">
+                <img src="galeria1.jpg" alt="Delivery Premium" class="floating-img">
+                <div class="gold-frame"></div>
+            </div>
+            <div class="delivery-info">
+                <span class="tag-gold">ALTA GASTRONOMIA EM SUA CASA</span>
+                <h2>Experiência Kinpai Delivery</h2>
+                <p>Peça pelo delivery e aproveite nossos pratos preparados na hora, com ingredientes selecionados e o mesmo cuidado servido no restaurante. Pensado para chegar até você com máxima velocidade, qualidade e muito frescor.</p>
+                <a href="https://www.ifood.com.br/delivery/petropolis-rj/kinpai-sushi-valparaiso/30557874-9aa9-4d08-a2b9-080cdc921a9f?prato=1dba54e0-2e92-43dc-abbe-e58060e9f80d" target="_blank" class="btn-gold">
+                    <span>PEDIR AGORA NO IFOOD</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservas" class="footer-section">
+        <div class="footer-overlay"></div>
+        <div class="footer-content">
+            <span class="tag-gold">VIVENCIE ESSA JORNADA</span>
+            <h2>RESERVAS</h2>
+            <p class="phone-number">24 98111-4008</p>
+            <p class="hours">Segunda a Sábado — 12h às 23h30</p>
+            <p class="address">Rua Gonçalves Dias, 423 — Petrópolis, RJ</p>
+            
+            <div class="social-links">
+                <a href="https://instagram.com/kinpaisushi" target="_blank">INSTAGRAM</a>
+                <span class="sep">•</span>
+                <a href="https://wa.me/5524981114008" target="_blank">WHATSAPP</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 KINPAI SUSHI — CRIADO COM PAIXÃO ABSOLUTA</div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

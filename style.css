@@ -1,0 +1,154 @@
+:root {
+    --gold: #c5a059;
+    --gold-bright: #e5c17d;
+    --dark-bg: #050505;
+    --card-bg: #0d0d0d;
+    --text-white: #ffffff;
+    --text-muted: #999999;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+h1, h2, h3, .loader-logo {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 3px;
+}
+
+/* Preloader Magnífico */
+.preloader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: var(--dark-bg); z-index: 99999;
+    display: flex; align-items: center; justify-content: center;
+}
+.loader-content { text-align: center; }
+.loader-logo { font-size: 5rem; color: var(--gold); margin-bottom: 5px; }
+.loader-sub { font-size: 0.8rem; letter-spacing: 6px; color: var(--text-muted); margin-bottom: 25px; }
+.loader-bar { width: 200px; height: 1px; background: rgba(255,255,255,0.05); margin: 0 auto; position: relative; }
+.bar-progress { width: 0%; height: 100%; background: var(--gold); position: absolute; left: 0; top: 0; }
+
+/* Barra de Navegação de Alta Costura */
+.navbar {
+    position: fixed; top: 0; width: 100%; padding: 35px 6%;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 10000; transition: all 0.5s ease;
+}
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.96); padding: 18px 6%;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+    backdrop-filter: blur(10px);
+}
+.logo { font-size: 1.6rem; font-weight: 700; color: var(--gold); letter-spacing: 6px; }
+.nav-links a {
+    color: var(--text-white); text-decoration: none; margin-left: 35px;
+    font-size: 0.75rem; letter-spacing: 3px; transition: color 0.3s; font-weight: 600;
+}
+.nav-links a:hover { color: var(--gold); }
+
+/* Banner Inicial (Hero) */
+.hero { position: relative; height: 100vh; display: flex; align-items: center; padding: 0 8%; overflow: hidden; }
+.parallax-bg { position: absolute; top: 0; left: 0; width: 100%; height: 130%; object-fit: cover; z-index: -2; transform: scale(1.05); }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(5,5,5,0.95) 35%, rgba(5,5,5,0.6) 100%); z-index: -1; }
+.hero-content { max-width: 750px; }
+.tag-gold { color: var(--gold); font-size: 0.8rem; font-weight: 600; letter-spacing: 5px; display: block; margin-bottom: 20px; }
+.tag-gold.center { text-align: center; }
+.hero h1 { font-size: 5rem; line-height: 1.1; margin-bottom: 30px; font-weight: 700; color: #fff; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.hero p { color: #dddddd; font-size: 1.1rem; font-weight: 300; line-height: 1.9; }
+
+.scroll-indicator { margin-top: 60px; cursor: pointer; display: inline-flex; align-items: center; gap: 15px; }
+.scroll-indicator span { font-size: 0.7rem; letter-spacing: 3px; color: var(--gold); font-weight: 600; }
+.indicator-line { width: 50px; height: 1px; background: var(--gold); position: relative; overflow: hidden; }
+
+/* Galeria de Fotos Elegante */
+.gallery-section { padding: 140px 6% 80px 6%; }
+.section-title { font-size: 3rem; text-align: center; margin-bottom: 60px; font-weight: 400; color: #fff; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.gallery-item { height: 480px; overflow: hidden; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s; filter: grayscale(30%); }
+.gallery-item:hover img { transform: scale(1.08); filter: grayscale(0%); }
+
+/* Grid de Cardápios Inteligentes */
+.menu-section { padding: 100px 6%; background: #090909; }
+.section-subtitle { text-align: center; color: var(--text-muted); margin-top: -45px; margin-bottom: 60px; font-size: 0.95rem; }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+.menu-card {
+    position: relative; background: var(--card-bg); padding: 55px 30px;
+    text-align: center; border: 1px solid rgba(255,255,255,0.03); cursor: pointer; transition: all 0.4s ease;
+}
+.card-border { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid var(--gold); opacity: 0; transform: scale(0.95); transition: 0.4s; }
+.menu-card h3 { font-size: 1.2rem; font-weight: 400; margin-bottom: 15px; transition: color 0.3s; }
+.explore-btn { font-size: 0.65rem; letter-spacing: 2px; color: var(--gold); font-weight: 600; display: block; opacity: 0.6; transition: 0.3s; }
+.menu-card:hover { transform: translateY(-5px); background: #121212; }
+.menu-card:hover .card-border { opacity: 0.3; transform: scale(1); }
+.menu-card:hover h3 { color: var(--gold); }
+.menu-card:hover .explore-btn { opacity: 1; letter-spacing: 3px; }
+
+/* Modal do Cardápio Aberto (O que estava faltando) */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(5,5,5,0.95); z-index: 999999;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.5s ease;
+    backdrop-filter: blur(15px);
+}
+.modal.active { opacity: 1; pointer-events: auto; }
+.modal-content {
+    background: var(--card-bg); width: 90%; max-width: 650px;
+    max-height: 80vh; padding: 50px 40px; border-radius: 4px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    position: relative; overflow-y: auto; transform: translateY(30px); transition: transform 0.5s ease;
+}
+.modal.active .modal-content { transform: translateY(0); }
+.close-modal { position: absolute; top: 25px; right: 30px; font-size: 2rem; color: var(--gold); cursor: pointer; transition: 0.3s; }
+.close-modal:hover { color: #fff; }
+.modal-title { font-size: 2rem; text-align: center; color: var(--gold); }
+.modal-divider { width: 40px; height: 1px; background: var(--gold); margin: 20px auto 35px auto; }
+
+/* Itens de comida dentro do modal */
+.menu-item-row { display: flex; justify-content: space-between; margin-bottom: 25px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 15px; }
+.menu-item-info h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 5px; letter-spacing: 1px; }
+.menu-item-info p { font-size: 0.85rem; color: var(--text-muted); max-width: 450px; }
+.menu-item-price { color: var(--gold); font-weight: 600; font-size: 1.1rem; min-width: 80px; text-align: right; }
+
+/* Seção de Desejo de Compra (Delivery) */
+.delivery-section { padding: 160px 8%; background: var(--dark-bg); }
+.delivery-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.delivery-image-wrap { position: relative; }
+.floating-img { width: 100%; height: 500px; object-fit: cover; border-radius: 4px; position: relative; z-index: 2; box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
+.gold-frame { position: absolute; top: 30px; left: -30px; width: 100%; height: 100%; border: 1px solid var(--gold); z-index: 1; opacity: 0.3; }
+.delivery-info h2 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; font-weight: 400; }
+.delivery-info p { color: #bbbbbb; margin-bottom: 40px; font-size: 1.05rem; font-weight: 300; }
+
+/* Botão iFood Dourado de Luxo */
+.btn-gold {
+    display: inline-block; padding: 22px 50px; background: var(--gold); color: var(--dark-bg);
+    text-decoration: none; font-size: 0.8rem; font-weight: 700; letter-spacing: 3px;
+    position: relative; overflow: hidden; transition: all 0.4s; border: 1px solid var(--gold);
+}
+.btn-gold:hover { background: transparent; color: var(--gold); transform: translateY(-4px); box-shadow: 0 15px 30px rgba(197, 160, 89, 0.15); }
+
+/* Reservas e Rodapé */
+.footer-section { position: relative; padding: 140px 6% 60px 6%; text-align: center; background: #030303; border-top: 1px solid #0d0d0d; }
+.footer-content { position: relative; z-index: 2; }
+.phone-number { font-size: 4rem; color: var(--gold); font-weight: 700; margin: 20px 0; letter-spacing: 1px; }
+.hours { font-size: 1.1rem; color: #fff; margin-bottom: 5px; }
+.address { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 50px; }
+.social-links a { color: #fff; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; font-weight: 600; transition: color 0.3s; }
+.social-links a:hover { color: var(--gold); }
+.sep { color: rgba(197, 160, 89, 0.4); margin: 0 15px; }
+.copyright { margin-top: 120px; font-size: 0.6rem; color: #333; letter-spacing: 2px; }
+
+/* Responsividade Responsável */
+@media (max-width: 1024px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .delivery-container { grid-template-columns: 1fr; gap: 50px; }
+    .hero h1 { font-size: 3.5rem; }
+    .phone-number { font-size: 2.8rem; }
+}
